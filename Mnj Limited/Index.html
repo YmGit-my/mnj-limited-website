@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNJ Limited | Enterprise Data Engineering & AI Solutions</title>
+    
+    <!-- SEO & Google Indexing Metadata -->
+    <meta name="description" content="MNJ Limited provides enterprise data engineering architectures, cloud integrations, Azure Databricks migration, custom simulation software, AlphaStock intelligence, and Wardrobe AI solutions. Based in Toronto, Ontario." />
+    <meta name="keywords" content="MNJ Limited, Data Engineering, Consulting, Azure Databricks, Power BI, SSIS, Carwash Queue Simulation, AlphaStock, Wardrobe AI, Toronto, Careers, Internships" />
+    <meta name="author" content="Manoj Kumar Yalavarthi" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="MNJ Limited | Enterprise Data Engineering & AI Solutions" />
+    <meta property="og:description" content="Official platform for MNJ Limited. Consulting, systems architecture, predictive intelligence, and specialized simulation tech." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Structured Data (Organization & Local Business Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MNJ Limited",
+      "founder": "Manoj Kumar Yalavarthi",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Scarborough",
+        "addressRegion": "ON",
+        "addressCountry": "Canada"
+      },
+      "url": "https://mnjltd.com",
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Client Consulting & Careers",
+        "email": "contact@mnjltd.com"
+      },
+      "knowsAbout": [
+        "Data Engineering",
+        "Business Intelligence Architectures",
+        "Azure Databricks",
+        "Power BI",
+        "ETL Pipeline Automation"
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --bg-card: #161617;
+            --bg-card-hover: #1c1c1e;
+            --text-main: #f5f5f7;
+            --text-sub: #86868b;
+            --accent-green: #00A758; /* Manulife Green Signature */
+            --accent-green-hover: #008c4a;
+            --glass-nav: rgba(22, 22, 23, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism Navigation */
+        header {
+            background-color: var(--glass-nav);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-main);
+            opacity: 0.8;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-left: 28px;
+            transition: opacity 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--accent-green);
+        }
+
+        .nav-cta {
+            background-color: var(--accent-green) !important;
+            color: #ffffff !important;
+            opacity: 1 !important;
+            padding: 8px 16px;
+            border-radius: 980px;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--accent-green-hover) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 24px 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 16px;
+            background: rgba(0, 167, 88, 0.1);
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 980px;
+            border: 1px solid rgba(0, 167, 88, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            line-height: 1.45;
+            font-weight: 400;
+            color: var(--text-sub);
+            max-width: 680px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background 0.2s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-green-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.06);
+            color: var(--text-main);
+            padding: 12px 28px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background 0.2s ease;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Section Layouts */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid Cards */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 167, 88, 0.4);
+            background-color: var(--bg-card-hover);
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .card ul {
+            list-style: none;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .card ul li {
+            font-size: 0.88rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            opacity: 0.9;
+        }
+
+        .card ul li::before {
+            content: "—";
+            color: var(--accent-green);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Interactive Simulation Sandbox: Carwash Queue */
+        .sandbox-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+        }
+
+        @media(max-width: 900px) {
+            .sandbox-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sandbox-controls h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .sandbox-controls p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-green);
+            background: #333;
+            height: 6px;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .control-value {
+            float: right;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .sandbox-display {
+            background: #0b0b0c;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-card .val {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 4px;
+        }
+
+        .metric-card .lbl {
+            font-size: 0.72rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .queue-visualizer {
+            background: #121214;
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 140px;
+            border: 1px dashed var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .bay-status {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .bay-pill {
+            background: rgba(0, 167, 88, 0.15);
+            border: 1px solid var(--accent-green);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Careers & Internship Portal */
+        .careers-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media(max-width: 900px) {
+            .careers-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .job-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s ease;
+        }
+
+        .job-card:hover {
+            border-color: rgba(0, 167, 88, 0.4);
+        }
+
+        .job-tag {
+            font-size: 0.72rem;
+            background: rgba(255,255,255,0.06);
+            color: var(--text-sub);
+            padding: 4px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 8px;
+        }
+
+        .application-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            background: #0b0b0c;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: var(--accent-green);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0b0c;
+            padding: 60px 24px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-sub);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">MNJ <span>Limited</span></a>
+            <nav>
+                <a href="#consulting">Consulting</a>
+                <a href="#simulation">Queue Engine</a>
+                <a href="#alphastock">AlphaStock</a>
+                <a href="#wardrobe">Wardrobe AI</a>
+                <a href="#careers" class="nav-cta">Careers & Internships</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">Enterprise Architecture & Intelligence</div>
+        <h1>Data Engineering. Predictive Systems. Scalable Platforms.</h1>
+        <p>MNJ Limited architects robust data pipelines, cloud analytics ecosystems, real-time queuing simulations, and consumer-facing financial and visual intelligence engines.</p>
+        <div class="cta-group">
+            <a href="#consulting" class="btn-primary">Explore Solutions</a>
+            <a href="#careers" class="btn-secondary">Join Our Team &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Consulting & Core Architecture -->
+    <section class="section" id="consulting">
+        <div class="section-header">
+            <h2>Enterprise Data & BI Engineering</h2>
+            <p>Specialized independent consulting delivering scalable cloud data ingestion, warehousing pipelines, and executive-level visualization suites.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <div>
+                    <h3>Azure Databricks & ETL</h3>
+                    <p>High-performance data extraction, transformation, and load pipelines engineered to handle massive enterprise data volumes with optimal fault tolerance.</p>
+                </div>
+                <ul>
+                    <li>Automated SSIS & cloud workflows</li>
+                    <li>Enterprise logging & telemetry</li>
+                    <li>Data warehousing architecture</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <div>
+                    <h3>Power BI Architecture</h3>
+                    <p>Executive semantic models and visually polished corporate dashboards built with rigorous design standards (Manulife green identity patterns).</p>
+                </div>
+                <ul>
+                    <li>Advanced DAX & dimensional modeling</li>
+                    <li>Optimized enterprise reporting</li>
+                    <li>Role-based security layouts</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <div>
+                    <h3>Custom Simulation Engines</h3>
+                    <p>Specialized discrete-event simulation models built for complex logistical environments, capacity planning, and throughput optimization.</p>
+                </div>
+                <ul>
+                    <li>Real-time bottleneck analysis</li>
+                    <li>Stochastic arrival modeling</li>
+                    <li>Interactive operational dashboards</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulation Showcase: Carwash Queue -->
+    <section class="section" id="simulation">
+        <div class="section-header">
+            <h2>Live Queue Optimization Simulator</h2>
+            <p>Test the discrete-event queuing algorithm developed by MNJ Limited to eliminate bottlenecks in high-throughput operations like commercial carwashes.</p>
+        </div>
+        
+        <div class="sandbox-container">
+            <div class="sandbox-controls">
+                <h3>Simulation Parameters</h3>
+                <p>Adjust incoming traffic rates and washing bay capacity to preview real-time queuing performance metrics.</p>
+                
+                <div class="control-group">
+                    <label>Incoming Vehicle Arrival Rate: <span id="arrivalVal" class="control-value">12 /min</span></label>
+                    <input type="range" id="arrivalRate" min="2" max="30" value="12" oninput="updateSimulation()">
+                </div>
+
+                <div class="control-group">
+                    <label>Active Washing Bays: <span id="baysVal" class="control-value">4 Bays</span></label>
+                    <input type="range" id="baysCount" min="1" max="8" value="4" oninput="updateSimulation()">
+                </div>
+
+                <div class="control-group">
+                    <label>Wash Speed (Cycles/Min): <span id="speedVal" class="control-value">3.5 min</span></label>
+                    <input type="range" id="washSpeed" min="1" max="8" step="0.5" value="3.5" oninput="updateSimulation()">
+                </div>
+            </div>
+
+            <div class="sandbox-display">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="lbl">Avg Wait Time</div>
+                        <div class="val" id="metricWait">1.4 min</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="lbl">Queue Length</div>
+                        <div class="val" id="metricQueue">3 Cars</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="lbl">System Utilization</div>
+                        <div class="val" id="metricUtil">85%</div>
+                    </div>
+                </div>
+
+                <div class="queue-visualizer" id="visualizerBox">
+                    <div style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 8px;">Active Bay Allocation Status</div>
+                    <div class="bay-status" id="bayPillsContainer">
+                        <!-- Dynamic Bay Pills -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 1: AlphaStock Intelligence -->
+    <section class="section" id="alphastock">
+        <div class="section-header">
+            <h2>AlphaStock Intelligence Engine</h2>
+            <p>Automated multi-source financial curation engineered to filter market noise and deliver high-signal stock tracking updates.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Custom Email Curation</h3>
+                <p>Digest tailored alerts on selected equities and global news outlets directly to your inbox before market open.</p>
+            </div>
+            <div class="card">
+                <h3>Sentiment Analytics</h3>
+                <p>Algorithmic parsing of financial filings and press feeds to quantify institutional sentiment shifts instantaneously.</p>
+            </div>
+            <div class="card">
+                <h3>Informative Decision Support</h3>
+                <p>Clean, uncluttered dashboard views providing objective telemetry to assist long-term investors and traders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 2: Wardrobe AI Visual Matcher -->
+    <section class="section" id="wardrobe">
+        <div class="section-header">
+            <h2>Wardrobe AI & Garment Matcher</h2>
+            <p>Advanced computer vision technology that links apparel imagery directly to official retail archives and digital closets.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Exact Image Matching</h3>
+                <p>Input or name any piece of clothing to instantly locate the exact promotional post, brand, and retail source.</p>
+            </div>
+            <div class="card">
+                <h3>Wardrobe Curation</h3>
+                <p>Seamlessly integrate discovered apparel styles directly into your personalized digital wardrobe collection.</p>
+            </div>
+            <div class="card">
+                <h3>Style Inpainting Pipelines</h3>
+                <p>Experiment with cutting-edge diffusion model parameters and masked color segmentation maps for custom clothing edits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers & Internships Portal -->
+    <section class="section" id="careers">
+        <div class="section-header">
+            <h2>Careers & Internships at MNJ Limited</h2>
+            <p>We are expanding our technical team. Explore open roles and internships designed for ambitious engineers passionate about data systems and AI automation.</p>
+        </div>
+
+        <div class="careers-container">
+            <div>
+                <div class="job-card">
+                    <div>
+                        <span class="job-tag">Full-Time / Contract</span>
+                        <span class="job-tag">Remote / GTA</span>
+                    </div>
+                    <h3 style="margin-top: 12px;">Senior Data Engineer</h3>
+                    <p style="margin-top: 8px;">Lead cloud pipeline deployments, optimize Azure Databricks jobs, and govern large-scale ETL workflows.</p>
+                </div>
+
+                <div class="job-card">
+                    <div>
+                        <span class="job-tag">Internship</span>
+                        <span class="job-tag">Hybrid (Scarborough/GTA)</span>
+                    </div>
+                    <h3 style="margin-top: 12px;">Data Engineering & BI Intern</h3>
+                    <p style="margin-top: 8px;">Work closely on Power BI dashboard layouts, data cleansing automation, and discrete-event simulation scripts.</p>
+                </div>
+            </div>
+
+            <div class="application-form">
+                <h3 style="margin-bottom: 8px;">Candidate Application Portal</h3>
+                <p style="color: var::var(--text-sub); font-size: 0.88rem; margin-bottom: 24px;">Submit your details for active engineering roles or internship cohorts.</p>
+                
+                <form onsubmit="handleApplication(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="applicantName" placeholder="e.g., Alex Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="applicantEmail" placeholder="alex@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Position Applying For</label>
+                        <select id="applicantRole">
+                            <option value="Senior Data Engineer">Senior Data Engineer</option>
+                            <option value="Data Engineering & BI Intern">Data Engineering & BI Intern</option>
+                            <option value="General Technical Pool">General Technical Pool</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>LinkedIn / GitHub / Portfolio URL</label>
+                        <input type="url" id="applicantLink" placeholder="https://github.com/yourprofile" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit Application</button>
+                </form>
+                <div id="formSuccess" style="display: none; margin-top: 16px; color: var(--accent-green); font-size: 0.9rem; text-align: center;">
+                    Application successfully received! MNJ Limited HR will review your submission.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>&copy; 2026 MNJ Limited. All rights reserved. Registered Ontario Business Corporation.</div>
+            <div class="footer-links">
+                <a href="#consulting">Consulting</a>
+                <a href="#alphastock">AlphaStock</a>
+                <a href="#wardrobe">Wardrobe AI</a>
+                <a href="#careers">Careers</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Simulation Script -->
+    <script>
+        function updateSimulation() {
+            const arrival = parseInt(document.getElementById('arrivalRate').value);
+            const bays = parseInt(document.getElementById('baysCount').value);
+            const speed = parseFloat(document.getElementById('washSpeed').value);
+
+            document.getElementById('arrivalVal').innerText = arrival + ' /min';
+            document.getElementById('baysVal').innerText = bays + ' Bays';
+            document.getElementById('speedVal').innerText = speed + ' min';
+
+            // Queuing Formula Estimation Logic
+            const capacityPerMin = bays * (1 / speed);
+            const utilization = Math.min(Math.round((arrival / (capacityPerMin || 1)) * 100), 99);
+            
+            let queueLength = Math.max(0, Math.round((arrival - capacityPerMin) * 1.5 + (utilization > 80 ? (utilization - 80) / 3 : 0)));
+            if (arrival < capacityPerMin) queueLength = Math.max(0, Math.round(arrival * 0.1));
+
+            let waitTime = (queueLength / (capacityPerMin || 1)).toFixed(1);
+
+            document.getElementById('metricWait').innerText = waitTime + ' min';
+            document.getElementById('metricQueue').innerText = queueLength + ' Cars';
+            document.getElementById('metricUtil').innerText = utilization + '%';
+
+            // Render Bay Pills
+            const pillContainer = document.getElementById('bayPillsContainer');
+            pillContainer.innerHTML = '';
+            for (let i = 1; i <= bays; i++) {
+                const pill = document.createElement('div');
+                pill.className = 'bay-pill';
+                pill.innerText = `Bay #${i}: Active (${(60/speed).toFixed(0)} cars/hr)`;
+                pillContainer.appendChild(pill);
+            }
+        }
+
+        function handleApplication(e) {
+            e.preventDefault();
+            document.getElementById('formSuccess').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('applicantName').value = '';
+                document.getElementById('applicantEmail').value = '';
+                document.getElementById('applicantLink').value = '';
+            }, 1000);
+        }
+
+        // Initialize simulator on load
+        window.onload = updateSimulation;
+    </script>
+</body>
+</html>
